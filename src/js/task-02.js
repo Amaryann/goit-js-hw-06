@@ -6,3 +6,7 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const listId = document.getElementById("ingredients");
+ingredients.forEach(ingredient => {
+  listId.innerHTML += `<li class="item">${ingredient}</li>`
+})

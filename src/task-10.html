@@ -11,13 +11,13 @@
     <p><a href="index.html">Go back</a></p>
 
     <div id="controls">
-      <input type="number" min="1" max="100" step="1" />
-      <button type="button" data-create>Create</button>
-      <button type="button" data-destroy>Destroy</button>
+      <input type="number" min="1" max="100" step="1" id="input"/>
+      <button type="button" data-create onclick="createBoxes(document.getElementById('input').value)">Create</button>
+      <button type="button" data-destroy onclick="destroyBoxes()">Destroy</button>
     </div>
 
     <div id="boxes"></div>
 
-    <script src="js/task-10.js" type="module"></script>
+    <script src="js/task-10.js"></script>
   </body>
 </html>
