@@ -13,8 +13,10 @@ const images = [
   },
 ];
 
-const gallery = document.querySelectorAll(".gallery")[0];
+const gallery = document.querySelector(".gallery");
 console.log(gallery)
+let galleryLayout = "";
 images.forEach(image => {
-  gallery.innerHTML += `<li><img url="${image.url}" alt="${image.alt}"></img></li>`
+  galleryLayout += `<li><img src='${image.url}' alt="${image.alt}"></img></li>`
 })
+gallery.insertAdjacentHTML("afterbegin", galleryLayout)

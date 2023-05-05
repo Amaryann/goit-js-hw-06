@@ -6,10 +6,11 @@ function getRandomHexColor() {
 const box = document.getElementById("boxes");
 
 const createBoxes = (number) => {
+  let boxString = "";
   for (let i = 0; i < number; i++) {
-    console.log("box")
-    box.innerHTML += `<div class="box" style="background-color: ${getRandomHexColor()}; height: ${30+(10*i)}px; width: ${30+(10*i)}px; "></div>`
+    boxString += `<div class="box" style="background-color: ${getRandomHexColor()}; height: ${30+(10*i)}px; width: ${30+(10*i)}px; "></div>`
   }
+  box.insertAdjacentHTML("afterbegin", boxString);
 }
 const destroyBoxes = () => {
   box.innerHTML = "";

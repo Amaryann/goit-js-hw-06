@@ -7,6 +7,8 @@ const ingredients = [
   'Condiments',
 ];
 const listId = document.getElementById("ingredients");
+let list = "";
 ingredients.forEach(ingredient => {
-  listId.innerHTML += `<li class="item">${ingredient}</li>`
+  list += `<li class="item">${ingredient}</li>`
 })
+listId.insertAdjacentHTML("afterbegin", list)
