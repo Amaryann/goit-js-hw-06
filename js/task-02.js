@@ -7,8 +7,4 @@ const ingredients = [
   'Condiments',
 ];
 const listId = document.getElementById("ingredients");
-let list = "";
-ingredients.forEach(ingredient => {
-  list += `<li class="item">${ingredient}</li>`
-})
-listId.insertAdjacentHTML("afterbegin", list)
+listId.insertAdjacentHTML("afterbegin", ingredients.map(ingredient => `<li class="item">${ingredient}</li>`).join(""))

@@ -1,21 +1,16 @@
 const form = document.getElementsByClassName('login-form')[0]
-const onSubmit = () => {
+const onSubmit = (event) => {
     let data = {};
+    event.preventDefault();
     allFilledIn = true;
-    form.querySelectorAll("input").forEach(input => {
-        if (input.value == ""){
-            allFilledIn = false;
-        }
-    });
-    if(allFilledIn){
-        form.querySelectorAll("input").forEach(input => {
-            data[input.type] = input.value
-        })
-        console.log(data)
-        form.reset()
+    const {
+        elements: {email,
+        password,},
+    } = event.currentTarget;
+    if (email.value === "" || password.value === ""){
+        return alert("Всі поля повинні бути завповнені.")
     }
-    else{
-        alert("Всі поля повинні бути заповнені");
-    }
-    return false
+    console.log({email: email.value, password: password.value})
+    event.currentTarget.reset();
 }
+form.addEventListener("submit", onSubmit)
